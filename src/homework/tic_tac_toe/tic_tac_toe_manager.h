@@ -4,6 +4,7 @@
 #include <vector>
 #include <memory>
 #include "tic_tac_toe.h"
+#include "tic_tac_toe_data.h"
 #include <string.h>
 
 using std::cout;
@@ -19,9 +20,12 @@ private:
     int x_win = 0;
     int o_win = 0;
     int ties = 0;
+    TicTacToeData data;
     void update_winner_count(string winner);
 
 public:
+    TicTacToeManager() = default;
+    TicTacToeManager(TicTacToeData tic_tac_toe_data);
     void save_game(unique_ptr<TicTacToe>& b);
     void get_winner_total(int &o, int &x, int &t);
     friend ostream &operator<<(std::ostream &out, const TicTacToeManager &manager)
@@ -33,4 +37,6 @@ public:
 
         return out;
     }
+    ~TicTacToeManager();
 };
+

@@ -27,7 +27,9 @@ private:
 
 public:
     TicTacToe(int size) : pegs(size * size, " ") {}
+    TicTacToe(std::vector<string> p, string win): pegs(p), winner(win){}
     string get_winner() const { return winner; }
+    vector<string> get_pegs() const { return pegs; }
     bool game_over();
     void start_game(string first_player);
     void mark_board(int position);

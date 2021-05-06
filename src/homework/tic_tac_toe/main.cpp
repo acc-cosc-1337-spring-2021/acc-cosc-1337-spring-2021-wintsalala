@@ -4,6 +4,7 @@
 #include <tic_tac_toe_manager.h>
 #include <tic_tac_toe_3.h>
 #include <tic_tac_toe_4.h>
+#include <tic_tac_toe_data.h>
 
 using std::cin;
 using std::cout;
@@ -13,7 +14,8 @@ using std::string;
 
 int main()
 {
-	TicTacToeManager tic_tac_toe_manager;
+	TicTacToeData data;
+	TicTacToeManager tic_tac_toe_manager = TicTacToeManager(data);
 	while (true)
 	{
 		int type_of_board;
